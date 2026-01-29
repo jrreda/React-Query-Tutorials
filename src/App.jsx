@@ -21,6 +21,7 @@ function App() {
           </li>
         </ul>
       </nav>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/super-heroes" element={<SuperHeroesPage />} />
