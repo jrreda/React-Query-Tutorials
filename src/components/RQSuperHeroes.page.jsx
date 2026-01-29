@@ -9,12 +9,11 @@ export default function RQSuperHeroesPage() {
   const { data, isLoading, error, isError, isFetching } = useQuery({
     queryKey: ["super-heroes"],
     queryFn: fetchSuperHeroes,
-    cacheTime: 5000,
+    staleTime: 30000,
   });
 
   console.log("isLoading", isLoading);
   console.log("isFetching", isFetching);
-  console.log("isError", isError);
 
   if (isLoading) {
     return <div>Loading...</div>;
