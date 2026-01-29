@@ -14,9 +14,9 @@ export default function useSuperHeroesData(onSuccess, onError, interval) {
     onError,
     refetchInterval: interval,
     refetchIntervalInBackground: true,
-    select: (data) => {
-      return data.data.map((hero) => hero.name);
-    }
+    // select: (data) => {
+    //   return data.data.map((hero) => hero.name);
+    // }
   });
 
   return { data, isLoading, error, isError, isFetching, refetch }

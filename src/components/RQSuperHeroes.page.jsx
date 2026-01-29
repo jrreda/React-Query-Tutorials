@@ -1,12 +1,13 @@
 import { useState } from "react";
 import useSuperHeroesData from "../hooks/useSuperHeroesData";
+import { Link } from "react-router-dom";
 
 export default function RQSuperHeroesPage() {
   const [interval, setInterval] = useState(5000);
 
   const onSuccess = (data) => {
     console.log("Performe side effect when data is fetched successfully", data);
-    if (data?.length > 3) {
+    if (data?.data?.length > 3) {
       setInterval(0);
     }
   };
@@ -32,12 +33,14 @@ export default function RQSuperHeroesPage() {
       <h2>React Query - Super Heroes Page</h2>
       <button onClick={refetch}>Fetch Super Heroes</button>
       <ul>
-        {/* {data?.data.map((hero) => (
-          <li key={hero.id}>{hero.name}</li>
-        ))} */}
-        {data?.map((heroName) => (
-          <li key={heroName}>{heroName}</li>
+        {data?.data.map((hero) => (
+          <div key={hero.name}>
+            <Link to={`/rq-super-hero/${hero.id}`}>{hero.name}</Link>
+          </div>
         ))}
+        {/* {data?.map((heroName) => (
+          <li key={heroName}>{heroName}</li>
+        ))} */}
       </ul>
     </div>
   );
