@@ -6,11 +6,10 @@ const fetchSuperHeroes = async () => {
 };
 
 export default function RQSuperHeroesPage() {
-  const { data, isLoading, error, isError, isFetching } = useQuery({
+  const { data, isLoading, error, isError, isFetching, refetch } = useQuery({
     queryKey: ["super-heroes"],
     queryFn: fetchSuperHeroes,
-    refetchOnMount: true,
-    refetchOnWindowFocus: true,
+    enabled: false,
   });
 
   console.log("isLoading", isLoading);
@@ -27,6 +26,7 @@ export default function RQSuperHeroesPage() {
   return (
     <div>
       <h2>React Query - Super Heroes Page</h2>
+      <button onClick={refetch}>Fetch Super Heroes</button>
       <ul>
         {data?.data.map((hero) => (
           <li key={hero.id}>{hero.name}</li>
