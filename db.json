@@ -20,5 +20,22 @@
       "name": "Flash",
       "alterEgo": "Barry Allen"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chandler Bing",
+      "age": 30
+    },
+    {
+      "id": 2,
+      "name": "Ross Geller",
+      "age": 31
+    },
+    {
+      "id": 3,
+      "name": "Rachel Green",
+      "age": 32
+    }
   ]
 }
