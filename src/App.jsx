@@ -6,6 +6,7 @@ import SuperHeroesPage from './components/SuperHeroes.page'
 import RQSuperHeroesPage from './components/RQSuperHeroes.page'
 import RQSuperHeroPage from './components/RQSuperHero.page'
 import ParallelQueriesPage from './components/ParallelQueries.page'
+import DependantQueriesPage from './components/DependantQueries.page'
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           <li>
             <Link to="/parallel-queries">Parallel Queries</Link>
           </li>
+          <li>
+            <Link to="/dependant-queries">Dependant Queries</Link>
+          </li>
         </ul>
       </nav>
 
@@ -33,6 +37,7 @@ function App() {
         <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
         <Route path="/rq-super-hero/:heroId" element={<RQSuperHeroPage />} />
         <Route path="/parallel-queries" element={<ParallelQueriesPage />} />
+        <Route path="/dependant-queries" element={<DependantQueriesPage email="vishwas@example.com" />} />
       </Routes>
     </div>
   );
