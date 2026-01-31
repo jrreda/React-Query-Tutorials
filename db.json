@@ -24,6 +24,11 @@
       "id": "ded2",
       "name": "Spiderman",
       "alterEgo": "Peter Barker"
+    },
+    {
+      "id": "c4f0",
+      "name": "Catwoman",
+      "alterEgo": "Selina Kyle"
     }
   ],
   "friends": [

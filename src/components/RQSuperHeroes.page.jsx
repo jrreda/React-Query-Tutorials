@@ -28,6 +28,9 @@ export default function RQSuperHeroesPage() {
     console.log("name", name);
     console.log("alterEgo", alterEgo);
     addSuperHero({ name, alterEgo });
+    // clear the input fields
+    setName("");
+    setAlterEgo("");
   };
 
   if (isLoading) {

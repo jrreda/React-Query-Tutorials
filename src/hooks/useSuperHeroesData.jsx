@@ -30,8 +30,14 @@ export default function useSuperHeroesData(onSuccess, onError, interval) {
 export function useAddSuperHeroData() {
   const queryClient = useQueryClient();
   return useMutation(addSuperHero, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("super-heroes");
+    onSuccess: (data) => {
+      // queryClient.invalidateQueries("super-heroes"); // unnecessary network request
+      queryClient.setQueryData("super-heroes", (oldData) => {
+        return {
+          ...oldData,
+          data: [...oldData.data, data.data]
+        }
+      })
     }
   })
 }
