@@ -19,6 +19,11 @@
       "id": 4,
       "name": "Flash",
       "alterEgo": "Barry Allen"
+    },
+    {
+      "id": "ded2",
+      "name": "Spiderman",
+      "alterEgo": "Peter Barker"
     }
   ],
   "friends": [
@@ -44,7 +49,11 @@
   "channels": [
     {
       "id": "codevolution",
-      "courses": ["react", "vue", "angular"]
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
     }
   ],
   "colors": [
