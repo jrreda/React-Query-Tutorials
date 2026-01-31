@@ -1,8 +1,12 @@
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 
 const fetchSuperHeroes = async () => {
   return await axios.get('http://localhost:4000/superheroes')
+}
+
+const addSuperHero = async (hero) => {
+  return await axios.post('http://localhost:4000/superheroes', hero)
 }
 
 export default function useSuperHeroesData(onSuccess, onError, interval) {
@@ -20,4 +24,9 @@ export default function useSuperHeroesData(onSuccess, onError, interval) {
   });
 
   return { data, isLoading, error, isError, isFetching, refetch }
+}
+
+
+export function useAddSuperHeroData() {
+  return useMutation(addSuperHero)
 }
